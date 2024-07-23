@@ -1,0 +1,575 @@
+[
+  {
+    "name": "sample.js",
+    "path": "sample.js",
+    "content": {
+      "structured": {
+        "description": "A jQuery plugin for documentation tools, providing features such as URL decoding and encoding, query parameter parsing, highlighting search terms in text, and handling navigation with keyboard keys. It also includes a gettext-like translation system and utility functions for working with URLs and anchors. The plugin uses the jQuery library and is designed to work with HTML documents.",
+        "items": [
+          {
+            "id": "e15630d3-5cf3-7c88-ae44-8a42c132a119",
+            "ancestors": [],
+            "description": "Searches for a specified text within an HTML node or its child nodes and wraps it with a `<span>` element if found. It also adds an SVG rectangle around the highlighted area if the node is within an SVG element.",
+            "params": [
+              {
+                "name": "node",
+                "default_value": null,
+                "optional": false,
+                "type_name": "Node",
+                "description": "Used to process elements in an HTML document."
+              },
+              {
+                "name": "addItems",
+                "default_value": null,
+                "optional": false,
+                "type_name": "(object)[]",
+                "description": "Used to accumulate additional highlighting items."
+              }
+            ],
+            "usage": {
+              "language": "javascript",
+              "code": "var text = \"example\";\nhighlight(document.body, []);\n",
+              "description": ""
+            },
+            "name": "highlight",
+            "location": {
+              "start": 44,
+              "insert": 44,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 40,
+            "docLength": null
+          },
+          {
+            "id": "32170599-de8e-ce8d-3a4a-bc4014124d0b",
+            "ancestors": [
+              "e15630d3-5cf3-7c88-ae44-8a42c132a119"
+            ],
+            "description": "Loops and highlights child nodes.",
+            "name": null,
+            "location": {
+              "start": 79,
+              "insert": 80,
+              "offset": " ",
+              "indent": 8,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 3,
+            "docLength": null
+          },
+          {
+            "id": "912fd7e8-0dcd-7e81-854a-6dd91851b41a",
+            "ancestors": [],
+            "description": "Executes a callback function on each item in the collection.",
+            "name": null,
+            "location": {
+              "start": 85,
+              "insert": 86,
+              "offset": " ",
+              "indent": 4,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 3,
+            "docLength": null
+          },
+          {
+            "id": "d6914793-83f0-eca6-544a-a290a22c1447",
+            "ancestors": [],
+            "description": "Initializes various components of an application, including fixing a Firefox anchor bug, highlighting search words, and initializing an index table. If navigation with keys is enabled, it also sets up key listeners for navigation.",
+            "params": [],
+            "usage": {
+              "language": "javascript",
+              "code": "var obj = new Object();\nobj.init();",
+              "description": ""
+            },
+            "name": "init",
+            "location": {
+              "start": 116,
+              "insert": 116,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 8,
+            "docLength": null
+          },
+          {
+            "id": "b8253638-086f-90b8-8b43-ab70f8937364",
+            "ancestors": [],
+            "description": "Translates a given string using the `Documentation.TRANSLATIONS` object. If no translation is found, it returns the original string. If multiple translations are available, it selects the first one.",
+            "params": [
+              {
+                "name": "string",
+                "default_value": null,
+                "optional": false,
+                "type_name": "string",
+                "description": "Used to translate."
+              }
+            ],
+            "returns": {
+              "type_name": "string | object",
+              "description": "Either a string translation if available or the first element of an array translation if available. If no translation is found, it returns the original input string."
+            },
+            "usage": {
+              "language": "javascript",
+              "code": "var translation = gettext('hello');\nalert(translation); // Output: \"Bonjour\"",
+              "description": ""
+            },
+            "name": "gettext",
+            "location": {
+              "start": 131,
+              "insert": 131,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 6,
+            "docLength": null
+          },
+          {
+            "id": "e6482f0d-57d9-598f-044d-d39ed2f8a7cc",
+            "ancestors": [],
+            "description": "Translates a string to a specific number (singular or plural) based on a dictionary and a number n, returning the corresponding translated string. If no translation exists for the singular form, it falls back to using the plural form if n is not 1.",
+            "params": [
+              {
+                "name": "singular",
+                "default_value": null,
+                "optional": false,
+                "type_name": "string",
+                "description": "Used to specify a singular translation key."
+              },
+              {
+                "name": "plural",
+                "default_value": null,
+                "optional": false,
+                "type_name": "string",
+                "description": "Used for plural form of the message."
+              },
+              {
+                "name": "n",
+                "default_value": null,
+                "optional": false,
+                "type_name": "number",
+                "description": "1-based count of an item or quantity."
+              }
+            ],
+            "returns": {
+              "type_name": "string",
+              "description": "Either the singular form if `n` is equal to 1, or the plural form if `n` is not equal to 1, and a translated version based on the plural expression in case a translation is found."
+            },
+            "usage": {
+              "language": "javascript",
+              "code": "var message = ngettext('book', 'books', 2);\n",
+              "description": "\n\nThis will return a translated string based on the number of books."
+            },
+            "name": "ngettext",
+            "location": {
+              "start": 138,
+              "insert": 138,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 6,
+            "docLength": null
+          },
+          {
+            "id": "cf86df13-ba15-e688-ce4d-8130cbb52e7b",
+            "ancestors": [],
+            "description": "Initializes a translation catalog, storing message keys and values in the `TRANSLATIONS` object. It also compiles a pluralization expression from the provided string and sets the current locale. This function prepares the application for internationalization (i18n) by populating its translation data.",
+            "params": [
+              {
+                "name": "catalog",
+                "default_value": null,
+                "optional": false,
+                "type_name": "object",
+                "description": "Used to store translations for an application."
+              }
+            ],
+            "usage": {
+              "language": "javascript",
+              "code": "var catalog = {\n    messages: {\"hello\": \"Bonjour\"},\n    plural_expr: \"'n' === 1 ? 0 : 1\",\n    locale: \"fr\"\n};\nvar obj = {};\nobj.addTranslations(catalog);\n",
+              "description": ""
+            },
+            "name": "addTranslations",
+            "location": {
+              "start": 145,
+              "insert": 145,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 6,
+            "docLength": null
+          },
+          {
+            "id": "297ab0bc-56e1-4788-c84f-7f0232fdc41d",
+            "ancestors": [],
+            "description": "Adds a permalink link to each header element (H1-H6) and definition term that has an ID, allowing users to quickly navigate back to these specific elements within the content.",
+            "params": [],
+            "usage": {
+              "language": "javascript",
+              "code": "$(document).ready(function() {\n  addContextElements();\n});\n",
+              "description": "\nThis code simply calls the addContextElements function when the document has finished loading."
+            },
+            "name": "addContextElements",
+            "location": {
+              "start": 152,
+              "insert": 152,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 14,
+            "docLength": null
+          },
+          {
+            "id": "4d91b54c-3edf-31a5-a144-154a42bb0238",
+            "ancestors": [
+              "297ab0bc-56e1-4788-c84f-7f0232fdc41d"
+            ],
+            "description": "Creates and appends permalinks to div headers.",
+            "name": null,
+            "location": {
+              "start": 153,
+              "insert": 154,
+              "offset": " ",
+              "indent": 6,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 6,
+            "docLength": null
+          },
+          {
+            "id": "4b4a14e3-b920-c382-b14d-b91f7508f60d",
+            "ancestors": [
+              "297ab0bc-56e1-4788-c84f-7f0232fdc41d"
+            ],
+            "description": "Creates and appends an anchor element to each 'dt' element with an ID attribute.",
+            "name": null,
+            "location": {
+              "start": 159,
+              "insert": 160,
+              "offset": " ",
+              "indent": 6,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 6,
+            "docLength": null
+          },
+          {
+            "id": "3b86a54a-6bf1-abbe-fd46-8ae7a13259ca",
+            "ancestors": [],
+            "description": "Fixes a bug in Firefox where clicking on an anchor link causes the URL to jump to the top. It adds an empty fragment (`''`) to the URL after a short delay, effectively canceling the jump and retaining the original anchor position.",
+            "params": [],
+            "usage": {
+              "language": "javascript",
+              "code": "fixFirefoxAnchorBug();\n",
+              "description": ""
+            },
+            "name": "fixFirefoxAnchorBug",
+            "location": {
+              "start": 167,
+              "insert": 167,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 6,
+            "docLength": null
+          },
+          {
+            "id": "aef2f95e-9aef-6c86-d64f-b3751546dda6",
+            "ancestors": [
+              "3b86a54a-6bf1-abbe-fd46-8ae7a13259ca"
+            ],
+            "description": "Reloads the page.",
+            "name": null,
+            "location": {
+              "start": 169,
+              "insert": 170,
+              "offset": " ",
+              "indent": 8,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 3,
+            "docLength": null
+          },
+          {
+            "id": "479f3183-f987-889e-5d4a-e3a83996370e",
+            "ancestors": [],
+            "description": "Highlights search terms within a web page's body content, using query parameters to determine which terms to highlight. It also adds a link to hide the highlighted text. The highlighting is delayed by 10 milliseconds to allow the page to load fully.",
+            "params": [],
+            "usage": {
+              "language": "javascript",
+              "code": "Documentation.highlightSearchWords();\n",
+              "description": "\nThis will start searching for highlightable terms and show search matches."
+            },
+            "name": "highlightSearchWords",
+            "location": {
+              "start": 174,
+              "insert": 174,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 18,
+            "docLength": null
+          },
+          {
+            "id": "233422ad-b5cc-249f-4e4e-53adac2722ea",
+            "ancestors": [
+              "479f3183-f987-889e-5d4a-e3a83996370e"
+            ],
+            "description": "Highlights text.",
+            "name": null,
+            "location": {
+              "start": 182,
+              "insert": 183,
+              "offset": " ",
+              "indent": 8,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 5,
+            "docLength": null
+          },
+          {
+            "id": "652b2ba6-e374-5e96-4943-88604ec49976",
+            "ancestors": [
+              "479f3183-f987-889e-5d4a-e3a83996370e",
+              "233422ad-b5cc-249f-4e4e-53adac2722ea"
+            ],
+            "description": "Loops through each item in an array and highlights it in a text body.",
+            "name": null,
+            "location": {
+              "start": 183,
+              "insert": 184,
+              "offset": " ",
+              "indent": 10,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 3,
+            "docLength": null
+          },
+          {
+            "id": "2e2cf068-536a-ff8a-1a46-560363056bc4",
+            "ancestors": [],
+            "description": "Initializes click event handlers for images with class \"toggler\" and toggles the visibility of corresponding table rows. It also updates the image source to switch between plus and minus icons. If a collapse option is enabled, it simulates an initial click on each toggler.",
+            "params": [],
+            "usage": {
+              "language": "javascript",
+              "code": "initIndexTable();\n",
+              "description": ""
+            },
+            "name": "initIndexTable",
+            "location": {
+              "start": 193,
+              "insert": 193,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 14,
+            "docLength": null
+          },
+          {
+            "id": "29c0d491-3d18-b49c-d542-f1e855ecdb4e",
+            "ancestors": [
+              "2e2cf068-536a-ff8a-1a46-560363056bc4"
+            ],
+            "description": "Toggles image and table row visibility.",
+            "name": null,
+            "location": {
+              "start": 194,
+              "insert": 195,
+              "offset": " ",
+              "indent": 6,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 9,
+            "docLength": null
+          },
+          {
+            "id": "4aa08afc-3c19-309d-5d4f-08fcbb87a419",
+            "ancestors": [],
+            "description": "Fades out the elements with the class `highlight-link` within the element with the ID `searchbox`, and removes the class `highlighted` from all elements with the tag name `span`. This effectively hides any highlighted search results.",
+            "params": [],
+            "usage": {
+              "language": "javascript",
+              "code": "$(document).ready(function(){\n  var myObject = {\n    hideSearchWords: function() {\n      $('#searchbox .highlight-link').fadeOut(300);\n      $('span.highlighted').removeClass('highlighted');\n    }\n  };\n  myObject.hideSearchWords();\n});",
+              "description": ""
+            },
+            "name": "hideSearchWords",
+            "location": {
+              "start": 208,
+              "insert": 208,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 4,
+            "docLength": null
+          },
+          {
+            "id": "0041b38e-60a1-1bb8-7641-26ad9f257f38",
+            "ancestors": [],
+            "description": "Constructs a full URL by concatenating a predefined `URL_ROOT` and a given `relativeURL`. This allows for generating URLs that are based on a common root path, while keeping the relative path separate from the root.",
+            "params": [
+              {
+                "name": "relativeURL",
+                "default_value": null,
+                "optional": false,
+                "type_name": "string",
+                "description": "Used to create a full URL."
+              }
+            ],
+            "returns": {
+              "type_name": "string",
+              "description": "A URL composed of the concatenated strings `DOCUMENTATION_OPTIONS.URL_ROOT`, `'/'`, and `relativeURL`. The returned string represents a complete URL."
+            },
+            "usage": {
+              "language": "javascript",
+              "code": "var absoluteURL = makeURL('examplePage');\n",
+              "description": ""
+            },
+            "name": "makeURL",
+            "location": {
+              "start": 213,
+              "insert": 213,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 3,
+            "docLength": null
+          },
+          {
+            "id": "2731ed66-6195-389f-1d45-4e9041a8a0e1",
+            "ancestors": [],
+            "description": "Extracts a relative URL from a full URL by removing any '../' path parts and returning the remaining part after the last slash.",
+            "params": [],
+            "returns": {
+              "type_name": "string",
+              "description": "The filename of the current URL without the file extension and any trailing characters."
+            },
+            "usage": {
+              "language": "javascript",
+              "code": "var url = getCurrentURL();\nalert(url);\n",
+              "description": ""
+            },
+            "name": "getCurrentURL",
+            "location": {
+              "start": 217,
+              "insert": 217,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 10,
+            "docLength": null
+          },
+          {
+            "id": "1a78b1e5-c88d-498e-e941-c2fdd7cf3173",
+            "ancestors": [
+              "2731ed66-6195-389f-1d45-4e9041a8a0e1"
+            ],
+            "description": "Cleans URL path by removing parent directories.",
+            "name": null,
+            "location": {
+              "start": 220,
+              "insert": 221,
+              "offset": " ",
+              "indent": 6,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 4,
+            "docLength": null
+          },
+          {
+            "id": "8d1953a1-bb9a-27bb-5d49-4518fde8a804",
+            "ancestors": [],
+            "description": "Sets up keydown event listeners on the document element to navigate through pages using left and right arrow keys when the focus is not on a specific HTML elements (search box, textarea, dropdown or button). It checks for rel=\"prev\" and rel=\"next\" links in the page and navigates accordingly.",
+            "params": [],
+            "returns": {
+              "type_name": "boolean",
+              "description": "Determined by the execution of the inner functions within the event handlers."
+            },
+            "usage": {
+              "language": "javascript",
+              "code": "$(document).ready(function(){\n  $(window).initOnKeyListeners();\n});\n",
+              "description": "\n\nThis code initializes the event listener for the key presses once the document has finished loading."
+            },
+            "name": "initOnKeyListeners",
+            "location": {
+              "start": 228,
+              "insert": 228,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 24,
+            "docLength": null
+          },
+          {
+            "id": "8ddcdbcc-ff17-bca2-cb45-85e1c641b9d6",
+            "ancestors": [
+              "8d1953a1-bb9a-27bb-5d49-4518fde8a804"
+            ],
+            "description": "Handles arrow key navigation.",
+            "name": null,
+            "location": {
+              "start": 229,
+              "insert": 230,
+              "offset": " ",
+              "indent": 6,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 22,
+            "docLength": null
+          },
+          {
+            "id": "4216261e-2ecc-1fae-0a4c-5a0b22b205f7",
+            "ancestors": [],
+            "description": "Initializes.",
+            "name": null,
+            "location": {
+              "start": 257,
+              "insert": 258,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 3,
+            "docLength": null
+          }
+        ]
+      }
+    }
+  }
+]
