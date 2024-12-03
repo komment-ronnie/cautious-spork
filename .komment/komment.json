@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "version": "1",
+    "updated_at": "2024-07-23T09:08:05.712Z",
+    "created_at": "2024-07-23T09:08:06.649Z",
+    "pipelines": [
+      "b837916a-6d0f-429d-840c-ed26798d6607"
+    ]
+  },
+  "lookup": [
+    [
+      "sample.js"
+    ]
+  ]
+}
